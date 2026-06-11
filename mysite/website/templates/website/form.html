@@ -1,0 +1,14 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Form{% endblock %}
+
+{% block content %}
+<h2>Add Person</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Enter name" required>
+    <br><br>
+    <button style="background-color: blue; color: white;" type="submit">Submit</button>
+</form>
+{% endblock %}

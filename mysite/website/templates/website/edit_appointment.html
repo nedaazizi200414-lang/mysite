@@ -1,0 +1,30 @@
+{% extends 'website/base.html' %}
+{% block content %}
+
+<h2>ویرایش نوبت</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="patient_name" value="{{ appointment.patient_name }}">
+
+    <input type="text" name="phone" value="{{ appointment.phone }}">
+
+    <select name="doctor">
+        {% for d in doctors %}
+            <option value="{{ d.id }}"
+            {% if d.id == appointment.doctor.id %}selected{% endif %}>
+                {{ d.name }}
+            </option>
+        {% endfor %}
+    </select>
+
+    <input type="date" name="date" value="{{ appointment.date }}">
+    <input type="time" name="time" value="{{ appointment.time }}">
+
+    <textarea name="reason">{{ appointment.reason }}</textarea>
+
+    <button type="submit">آپدیت نوبت</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Table{% endblock %}
+
+{% block content %}
+<h2>Persons List</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Name</th>
+    </tr>
+
+    {% for person in persons %}
+    <tr>
+        <td>{{ person.name }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td>No data yet</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+
+<section class="doctor-profile">
+
+    <div class="doctor-box">
+{% load static %}
+
+<img src="{% static doctor.image %}" alt="{{ doctor.name }}">
+      
+
+        <div class="doctor-info">
+
+            <h3>{{ doctor.name }}</h3>
+
+            <h3>{{ doctor.specialty }}</h3>
+
+         
+
+            <p>
+                <strong>شماره تماس:</strong>
+                +93793457688
+            </p>
+
+            <p>
+                <strong>ایمیل:</strong>
+                {{ doctor.email }}
+            </p>
+<div class="info">
+           <i class="fa-solid fa-briefcase"></i>
+            <span>{{ doctor.experience }} سال تجربه</span>
+        </div>
+
+         <div class="info"> <i class="fa-solid fa-location-dot"></i> کابل، افغانستان</div>
+
+         <div class="stars">⭐⭐⭐⭐☆ 4.5</div>
+
+    </div>
+            <a href="{% url 'appointment' %}" class="book-btn">
+                رزرو نوبت
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

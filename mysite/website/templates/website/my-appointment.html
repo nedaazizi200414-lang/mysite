@@ -1,0 +1,47 @@
+{% extends 'website/base.html' %}
+{% block content %}
+
+<section class="my-appointments">
+
+    <h1 class="page-title">نوبت‌های ثبت شده</h1>
+
+    <div class="appointment-grid">
+
+        {% for a in appointments %}
+
+        <div class="appointment-card">
+
+            <h3><i class="fa-solid fa-user"></i> {{ a.patient_name }}</h3>
+
+            <p><i class="fa-solid fa-user-doctor"></i> {{ a.doctor.name }}</p>
+            <p><i class="fa-solid fa-stethoscope"></i> {{ a.doctor.specialty }}</p>
+
+            <p><i class="fa-solid fa-calendar"></i> {{ a.date }}</p>
+            <p><i class="fa-solid fa-clock"></i> {{ a.time }}</p>
+            <p><i class="fa-solid fa-phone"></i> {{ a.phone }}</p>
+            <p><i class="fa-solid fa-notes-medical"></i> {{ a.reason }}</p>
+
+            <div class="action-buttons">
+
+                <a href="{% url 'edit' a.id %}" class="edit-btn">
+                    <i class="fa-solid fa-pen"></i> ویرایش
+                </a>
+
+                <a href="{% url 'delete' a.id %}" class="delete-btn"
+                   onclick="return confirm('حذف شود؟')">
+                    <i class="fa-solid fa-trash"></i> حذف
+                </a>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+        <p>هیچ نوبتی ثبت نشده است</p>
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

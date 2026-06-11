@@ -1,0 +1,65 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}تماس با ما{% endblock %}
+
+{% block content %}
+
+<section class="contact-hero"><div class="contact-info">
+
+    <h1>تماس با DoctorCare</h1>
+
+    <p>
+        ما همیشه آماده پاسخگویی به سوالات، پیشنهادات و درخواست‌های شما هستیم.
+        برای ارتباط با تیم DoctorCare می‌توانید از راه‌های زیر استفاده کنید.
+    </p>
+
+    <div class="contact-box">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+            <h3>تماس تلفنی</h3>
+            <p>+93 700 000 000</p>
+        </div>
+    </div>
+
+    <div class="contact-box">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+            <h3>ایمیل</h3>
+            <p>info@doctorcare.com</p>
+        </div>
+    </div>
+
+    <div class="contact-box">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+            <h3>آدرس</h3>
+            <p>کابل، افغانستان</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="contact-form">
+
+    <form>
+
+        <input type="text" placeholder="نام کامل">
+
+        <input type="email" placeholder="ایمیل">
+
+        <input type="text" placeholder="شماره تماس">
+
+        <textarea rows="6" placeholder="پیام خود را بنویسید"></textarea>
+
+        <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i>
+            ارسال پیام
+        </button>
+
+    </form>
+
+</div>
+
+</section>
+{% endblock %}

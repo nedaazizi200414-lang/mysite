@@ -1,0 +1,110 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}درباره ما{% endblock %}
+
+{% block content %}
+
+<section class="about-hero">
+
+    <div class="about-text">
+
+        <span class="badge">
+            <i class="fa-solid fa-heart-pulse"></i>
+            DoctorCare
+        </span>
+
+        <h1>
+            همراه مطمئن شما در مسیر سلامت
+        </h1>
+
+        <p>
+            DoctorCare یک پلتفرم مدرن رزرو آنلاین نوبت داکتران است که با هدف
+            ساده‌سازی دسترسی بیماران به خدمات صحی ایجاد شده است. کاربران می‌توانند
+            داکتر مورد نظر خود را جستجو نموده، مشخصات و تجربه کاری وی را مشاهده کرده
+            و تنها با چند کلیک نوبت خود را ثبت نمایند.
+        </p>
+
+        <a href="#" class="about-btn">
+            <i class="fa-solid fa-calendar-check"></i>
+            رزرو نوبت
+        </a>
+
+    </div>
+
+    <div class="about-image">
+        <img src="{% static 'website/images/about.png' %}" alt="">
+    </div>
+
+</section>
+
+<section class="mission">
+
+    <h2>ماموریت ما</h2>
+
+    <p>
+        ما تلاش می‌کنیم تا روند دریافت خدمات صحی را برای همه آسان‌تر،
+        سریع‌تر و مطمئن‌تر سازیم و پلی میان بیماران و داکتران متخصص باشیم.
+    </p>
+
+</section>
+
+<section class="features">
+
+    <h2>چرا DoctorCare ؟</h2>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h3>داکتران متخصص</h3>
+            <p>دسترسی به بهترین متخصصان در رشته‌های مختلف.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-calendar-check"></i>
+            <h3>رزرو آسان</h3>
+            <p>ثبت نوبت تنها در چند دقیقه.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-clock"></i>
+            <h3>صرفه جویی در زمان</h3>
+            <p>بدون انتظار طولانی و مراجعه حضوری.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-shield-heart"></i>
+            <h3>امنیت اطلاعات</h3>
+            <p>محافظت کامل از اطلاعات بیماران.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats">
+
+    <div class="stat-box">
+        <h2>500+</h2>
+        <p>داکتر فعال</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>10K+</h2>
+        <p>نوبت ثبت شده</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>95%</h2>
+        <p>رضایت کاربران</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>24/7</h2>
+        <p>دسترسی آنلاین</p>
+    </div>
+
+</section>
+
+{% endblock %}

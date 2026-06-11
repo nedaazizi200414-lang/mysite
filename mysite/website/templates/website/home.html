@@ -1,0 +1,144 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <img src="{% static 'website/images/doctor.png' %}" class="hero-img">
+
+    <div class="hero-text">
+
+   <h1>سیستم آنلاین نوبت دهی داکتران</h1>
+
+        <p>بهترین داکتران را پیدا کنید و در چند دقیقه نوبت خود را رزرو نمایید.</p>
+
+        <div class="search-box">
+            <input type="text" placeholder="نام داکتر یا تخصص">
+            <button>جستجو</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SPECIALITIES -->
+<section class="specialities">
+
+    <div class="speciality-box">👶 اطفال</div>
+    <div class="speciality-box">❤️ قلب</div>
+    <div class="speciality-box">🦷 دندان</div>
+    <div class="speciality-box">👁️ چشم</div>
+    <div class="speciality-box">🦴 استخوان</div>
+    <div class="speciality-box">🧠 اعصاب</div>
+    <div class="speciality-box">🫁 ریه</div>
+    <div class="speciality-box">🩺 داخله</div>
+ <div class="speciality-box"> 👂🏻
+  گوش و گلو</div>
+
+</section>
+
+
+<!-- POPULAR DOCTORS -->
+<section class="popular-doctors">
+
+    <h2>داکتران محبوب</h2>
+
+    <div class="popular-grid">
+
+        <!-- Doctor 1 -->
+        <div class="doctor-card">
+            <img src="{% static 'website/images/doctor13.jpg' %}">
+            <h3>داکتر محمد نعیم حمید</h3>
+            <p>  
+        متخصص امراض و جراحی چشم
+            </p>
+
+            <div class="info">  <i class="fa-solid fa-briefcase"></i> 20 سال تجربه</div>
+            <div class="info"> <i class="fa-solid fa-location-dot"></i> کابل، افغانستان</div>
+
+            <div class="stars">⭐⭐⭐⭐☆ 4.2</div>
+
+            <a href="/doctor/9/">مشاهده پروفایل</a>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="doctor-card">
+            <img src="{% static 'website/images/doctor5.jpg' %}">
+            <h3>
+            داکتر شایسته محمدی
+                </h3>
+            <p>  
+            متخصص امراض داخله
+              </p>
+
+            <div class="info">  <i class="fa-solid fa-briefcase"></i>12  سال تجربه</div>
+            <div class="info"> <i class="fa-solid fa-location-dot"></i> هرات، افغانستان</div>
+
+            <div class="stars">⭐⭐⭐⭐⭐ 4.8</div>
+
+            <a href="/doctor/6/">مشاهده پروفایل</a>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="doctor-card">
+            <img src="{% static 'website/images/doctor12.jpg' %}">
+            <h3>داکتر مجتبی صوفی</h3>
+            <p> 
+            متخصص امراض داخله اطفال 
+            </p>
+
+            <div class="info">  <i class="fa-solid fa-briefcase"></i> 13 سال تجربه</div>
+            <div class="info"> <i class="fa-solid fa-location-dot"></i> کابل، افغانستان</div>
+
+            <div class="stars">⭐⭐⭐⭐☆ 4.5</div>
+
+            <a href="/doctor/14/">مشاهده پروفایل</a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- OTHER DOCTORS -->
+<section class="other-doctors">
+
+    <h2>سایر داکتران</h2>
+
+    {% for doctor in doctors %}
+
+   <div class="doctor-row">
+
+    <!-- سمت راست: عکس -->
+    <img src="{% static doctor.image %}" alt="doctor">
+
+    <!-- وسط: اطلاعات -->
+    <div class="doctor-details">
+
+        <h4>{{ doctor.name }}</h4>
+        <p>{{ doctor.speciality }}</p>
+
+        <div class="info">
+           <i class="fa-solid fa-briefcase"></i>
+            <span>{{ doctor.experience }} سال تجربه</span>
+        </div>
+
+         <div class="info"> <i class="fa-solid fa-location-dot"></i> کابل، افغانستان</div>
+
+         <div class="stars">⭐⭐⭐⭐☆ 4.5</div>
+
+    </div>
+
+    <!-- سمت چپ: دکمه -->
+    <a href="{% url 'doctor_detail' doctor.id %}">
+         بیشتر
+    </a>
+
+</div>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}

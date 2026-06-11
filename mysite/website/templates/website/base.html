@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}DoctorCare{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+
+<div class="logo">
+    DoctorCare <i class="fa-solid fa-heart-pulse"></i>
+</div>
+        <ul>
+            <li><a href="/">خانه</a></li>
+            <li><a href="/doctors/"> فورم</a></li>
+            <li><a href="#">نوبت‌ها</a></li>
+            <li><a href="/about/">درباره ما</a></li>
+            <li><a href="/contact/">تماس با ما</a></li>
+        </ul>
+
+        <a href="/login/" class="login-btn">ورود</a>
+    </nav>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>DoctorCare</h3>
+            <p>سیستم آنلاین رزرو نوبت داکتران با تجربه و سریع.</p>
+        </div>
+
+        <div class="footer-box">
+            <h4>لینک‌ها</h4>
+            <a href="#">خانه</a>
+            <a href="#">داکتران</a>
+            <a href="#">رزرو نوبت</a>
+            <a href="{% url 'about' %} ">تماس با ما</a>
+        </div>
+
+      <div class="footer-box">
+    <h4>تماس</h4>
+
+    <p><i class="fa-solid fa-phone"></i> +93 700 000 000</p>
+
+    <p><i class="fa-solid fa-location-dot"></i> کابل، افغانستان</p>
+
+    <p><i class="fa-solid fa-envelope"></i> info@doctorcare.com</p>
+</div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 DoctorCare | All Rights Reserved</p>
+    </div>
+</footer>
+<div class="bottom-nav">
+   <a href="{% url 'home' %}">خانه</a>
+<a href="{% url 'about' %}">درباره ما</a>
+<a href="{% url 'contact' %}">تماس با ما</a>
+<a href="{% url 'appointment' %}">رزرو نوبت</a>
+<a href="{% url 'table' %}">نوبت‌های من</a>
+</div>
+
+</body>
+</html>
